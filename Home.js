@@ -75,7 +75,10 @@ function calculateTotal(items) {
 
 function calculateNetProfit() {
     const operationalCost = parseFloat(document.getElementById('operationalCostInput').value);
-    const totalGrossProfit = parseFloat(document.getElementById('totalGrossProfit').textContent.replace('Total Laba Kotor: Rp ', '').replace(/\./g, '').replace(',', '.'));
+    const totalGrossProfitText = document.getElementById('totalGrossProfit').textContent;
+    
+    // Extract the numeric value from the formatted text
+    const totalGrossProfit = parseFloat(totalGrossProfitText.replace(/[^\d,-]/g, '').replace(',', '.'));
 
     if (!isNaN(operationalCost) && !isNaN(totalGrossProfit)) {
         const netProfit = totalGrossProfit - operationalCost;
