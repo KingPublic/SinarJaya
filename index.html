@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinarJaya Inventory</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <div class="container" style="align-content: center; align-items: center; align-self: center;">
+        <h1>SinarJaya Inventory</h1>
+        <form id="inventoryForm">
+            <label for="itemName">Nama Barang:</label>
+            <input type="text" id="itemName" name="itemName" required>
+            
+            <label for="purchasePrice">Harga Beli:</label>
+            <input type="number" id="purchasePrice" name="purchasePrice" required>
+            
+            <label for="sellingPrice">Harga Jual:</label>
+            <input type="number" id="sellingPrice" name="sellingPrice" required>
+            
+            <label for="quantitySold">Jumlah Terjual:</label>
+            <input type="number" id="quantitySold" name="quantitySold" required>
+            
+            <button type="button" onclick="addItem()">Tambah Barang</button>
+        </form>
+        
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>Nama Barang</th>
+                    <th>Harga Beli</th>
+                    <th>Harga Jual</th>
+                    <th>Jumlah Terjual</th>
+                    <th>Laba Kotor</th>
+                    <th>Margin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+
+        <div id="totalResults">
+            <h2>Total Harian</h2>
+            <p id="totalGrossProfit">Total Laba Kotor: </p>
+            <p id="averageMargin">Rata-rata Margin: </p>
+        </div>
+        
+        <div id="operationalCost">
+            <h2>Biaya Operasional</h2>
+            <label for="operationalCostInput">Masukkan Biaya Operasional:</label>
+            <input type="number" id="operationalCostInput" name="operationalCostInput" required>
+            <button type="button" onclick="calculateNetProfit()">Hitung Laba Bersih</button>
+        </div>
+        
+        <div id="netProfitResults">
+            <h2>Hasil Laba Bersih</h2>
+            <p id="netProfit">Laba Bersih: </p>
+        </div>
+    </div>
+    <script src="Home.js"></script>
+</body>
+</html>
